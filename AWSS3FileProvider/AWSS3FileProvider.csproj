@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Lamond Lu</Authors>
+    <Company>Lamond Lu</Company>
+    <Description>a library to expose file in AWS S3 to ASP.NET Core Application with IFileProvider</Description>
   </PropertyGroup>
 
   <ItemGroup>

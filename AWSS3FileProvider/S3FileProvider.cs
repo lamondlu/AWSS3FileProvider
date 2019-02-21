@@ -69,7 +69,7 @@ namespace AWSS3FileProvider
             {
                 GetObjectRequest request = new GetObjectRequest();
                 request.BucketName = _setting.BucketName;
-                request.EtagToMatch = subpath.Substring(1);
+                request.Key = subpath.Substring(1);
 
                 GetObjectResponse response = client.GetObjectAsync(request).Result;
                 var stream = response.ResponseStream;

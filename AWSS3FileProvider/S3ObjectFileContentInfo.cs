@@ -14,18 +14,47 @@ namespace AWSS3FileProvider
         public S3ObjectFileContentInfo(Stream stream)
         {
             _stream = stream;
-            _stream.Position = 0;
         }
 
-        public bool Exists => throw new NotImplementedException();
+        public bool Exists
+        {
+            get
+            {
+                return true;
+            }
+        }
 
-        public long Length => throw new NotImplementedException();
+        public long Length
+        {
+            get
+            {
+                return _stream.Length;
+            }
+        }
 
-        public string PhysicalPath => throw new NotImplementedException();
+        public string PhysicalPath
+        {
+            get
+            {
+                return string.Empty;
+            }
+        }
 
-        public string Name => throw new NotImplementedException();
+        public string Name
+        {
+            get
+            {
+                return string.Empty;
+            }
+        }
 
-        public DateTimeOffset LastModified => throw new NotImplementedException();
+        public DateTimeOffset LastModified
+        {
+            get
+            {
+                return DateTime.Now;
+            }
+        }
 
         public bool IsDirectory
         {
