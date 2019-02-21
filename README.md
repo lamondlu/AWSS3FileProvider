@@ -1,4 +1,4 @@
-# AzureFileProvider
+# AWS S3 File Provider
 A library to expose object in the AWS S3 bucket to ASP.NET Core Application with IFileProvider.
 
 # How to use it?
