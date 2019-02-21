@@ -8,6 +8,7 @@
     <Description>a library to expose file in AWS S3 to ASP.NET Core Application with IFileProvider</Description>
     <PackageProjectUrl>https://github.com/lamondlu/AWSS3FileProvider</PackageProjectUrl>
     <RepositoryUrl>https://github.com/lamondlu/AWSS3FileProvider</RepositoryUrl>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
