@@ -67,10 +67,14 @@ namespace AWSS3FileProvider
         {
             using (var client = GetClient())
             {
-                ListObjectsRequest request = new ListObjectsRequest();
+                GetObjectRequest request = new GetObjectRequest();
                 request.BucketName = _setting.BucketName;
+                request.EtagToMatch = subpath.Substring(1);
 
-                throw new NotImplementedException();
+                GetObjectResponse response = client.GetObjectAsync(request).Result;
+                var stream = response.ResponseStream;
+
+                return new S3ObjectFileContentInfo(stream);
             }
         }
 

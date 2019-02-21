@@ -16,17 +16,53 @@ namespace AWSS3FileProvider
             _fileInfo = fileInfo;
         }
 
-        public bool Exists => throw new NotImplementedException();
+        public bool Exists
+        {
+            get
+            {
+                return true;
+            }
+        }
 
-        public long Length => throw new NotImplementedException();
+        public long Length
+        {
+            get
+            {
+                return _fileInfo.Size;
+            }
+        }
 
-        public string PhysicalPath => throw new NotImplementedException();
+        public string PhysicalPath
+        {
+            get
+            {
+                return _fileInfo.Key;
+            }
+        }
 
-        public string Name => throw new NotImplementedException();
+        public string Name
+        {
+            get
+            {
+                return _fileInfo.Key;
+            }
+        }
 
-        public DateTimeOffset LastModified => throw new NotImplementedException();
+        public DateTimeOffset LastModified
+        {
+            get
+            {
+                return _fileInfo.LastModified;
+            }
+        }
 
-        public bool IsDirectory => throw new NotImplementedException();
+        public bool IsDirectory
+        {
+            get
+            {
+                return false;
+            }
+        }
 
         public Stream CreateReadStream()
         {

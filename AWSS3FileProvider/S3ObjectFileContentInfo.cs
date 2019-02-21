@@ -9,13 +9,12 @@ namespace AWSS3FileProvider
 {
     public class S3ObjectFileContentInfo : IFileInfo
     {
-        private S3Object _fileInfo;
         private Stream _stream;
 
-        public S3ObjectFileContentInfo(S3Object fileInfo, Stream stream)
+        public S3ObjectFileContentInfo(Stream stream)
         {
-            _fileInfo = fileInfo;
             _stream = stream;
+            _stream.Position = 0;
         }
 
         public bool Exists => throw new NotImplementedException();
@@ -28,11 +27,17 @@ namespace AWSS3FileProvider
 
         public DateTimeOffset LastModified => throw new NotImplementedException();
 
-        public bool IsDirectory => throw new NotImplementedException();
+        public bool IsDirectory
+        {
+            get
+            {
+                return false;
+            }
+        }
 
         public Stream CreateReadStream()
         {
-            throw new NotImplementedException();
+            return _stream;
         }
     }
 }
